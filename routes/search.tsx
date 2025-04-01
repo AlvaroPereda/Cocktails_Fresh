@@ -21,13 +21,15 @@ export default (props:PageProps<Cocktail[] | null>) => {
                 <input type="text" name="name" placeholder="Cocktail name" required/>
                 <button type="submit">Find</button>
             </form>
-            {
-            props.data 
-            ? props.data.map(e => <CocktailComponent key={e.idDrink} {...e}/>) 
-            : props.data !== null 
-            ? <h1>No existe el coctail</h1> 
-            : null
-            }
+            <div class="list-cocktails">
+                {
+                props.data 
+                ? props.data.map(e => <CocktailComponent key={e.idDrink} {...e}/>) 
+                : props.data !== null 
+                ? <h1>There is no cocktail with that name</h1> 
+                : null
+                }
+            </div>
         </div>
     )
 }

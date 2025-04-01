@@ -18,11 +18,13 @@ export default function Home(props:PageProps<Cocktail[]>) {
   return (
     <div class="cocktail-almacen">
       <h1>Favorites</h1>
-      {
-        props.data.length > 0 
-        ? props.data.map(e => <CocktailComponent key={e.idDrink} {...e}/>) 
-        : <h3>Add your first cocktail to favorites</h3>
-      }
+      <div class="list-cocktails">
+        {
+          props.data.length > 0 
+          ? props.data.map(e => <CocktailComponent key={e.idDrink} {...e}/>) 
+          : <h3>Add your first cocktail to favorites</h3>
+        }
+      </div>
     </div>
   )
 }
